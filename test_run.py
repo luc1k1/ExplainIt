@@ -1,7 +1,7 @@
 import requests
 import json
 
-text_to_explain = "Сумма квадратов a **2 + b**2 и отличия от ( a + b ) **2."
+text_to_explain = "Hello"
 
 url = "http://127.0.0.1:8000/explain"
 
