@@ -10,16 +10,17 @@ Start year: **2025**
 
 ------------------------------------------------------------------------
 
-Overview
+**Overview**
 
 ExplainIt is an experimental project combining machine learning
 capabilities with an Android application.
+
 It includes a Python backend, ML modules, and mobile integration.
 
 
 ------------------------------------------------------------------------
 
-Installation
+**Installation**
 
 1.  Clone the repository:
 
@@ -31,7 +32,7 @@ Installation
 
     ```python3 -m venv venv```
     
-    ```source venv/bin/activate```  # Windows: ```venv\Scripts\activate```
+    ```source venv/bin/activate```  **Windows:** ```venv\Scripts\activate```
     
     ```pip install -r requirements.txt```
 
@@ -43,7 +44,7 @@ Installation
 
 ------------------------------------------------------------------------
 
-Features
+**Features**
 
 -   Modular ML pipeline
 -   Python backend API
@@ -52,7 +53,7 @@ Features
 
 ------------------------------------------------------------------------
 
-Future Plans
+**Future Plans**
 
 -   Add fully automated model training
 -   Improve Android interface
