@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 *.iml
 .gradle
 /local.properties
@@ -14,10 +14,9 @@
 .externalNativeBuild
 .cxx
 local.properties
-=======
 .venv/
 __pycache__/
 *.pyc
 .env
 .idea
->>>>>>> 94b57ca59efa41f3f8639185faf1d4f846ee7bbc
+
