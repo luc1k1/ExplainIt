@@ -99,10 +99,14 @@ Output: "Quantum computing is..."
 Future Plans
 ------------
 - Automated model training
-- New API endpoints (e.g., classification, translation)
 - Improved Android UI/UX
 - Support for multiple ML frameworks
 - Cloud deployment for backend
+
+| Feature | Status       |
+|---------|-------------|
+| Text explanation | ✅ Implemented |
+| Image explanation | ⚠ In progress |
 
 --------------------------------------------------------------------------------
 Contributing
