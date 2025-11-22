@@ -9,7 +9,7 @@ class ExplainRequest(BaseModel):
     @classmethod
     def validate_text(cls, v: str) -> str:
         if not v or not v.strip():
-            raise ValueError("Text cannot be emptmy")
+            raise ValueError("Text cannot be empty")
         return v.strip()
 
 
