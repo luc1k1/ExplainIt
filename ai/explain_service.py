@@ -8,8 +8,8 @@ from ai.schemas import ExplainRequest, ExplainResponse
 logger = logging.getLogger(__name__)
 
 def clean_json_output(text: str) -> str:
-    """Remove markdown code blocks and extract clean JSON"""
-    # Remove markdown code blocks (```json ... ```)
+    """remove markdown code blocks and extract clean JSON"""
+    # Remove markdown code blocks ( like json ''' ..... some text....'''')
     text = re.sub(r'```json\s*', '', text)
     text = re.sub(r'```\s*', '', text)
     # Remove leading/trailing whitespace
@@ -18,7 +18,7 @@ def clean_json_output(text: str) -> str:
 
 def explain_text(req: ExplainRequest) -> ExplainResponse:
     """
-    Generate explanation for the given text using AI.
+    Generate explanation for the given text using ai
     
     Args:
         req: ExplainRequest with text to explain
@@ -31,14 +31,14 @@ def explain_text(req: ExplainRequest) -> ExplainResponse:
     prompt = PROMPT.replace("{TEXT}", req.text)
     raw_output = generate(prompt)
     
-    # Clean the output from markdown blocks
+    # clean the output from markdown blocks
     cleaned_output = clean_json_output(raw_output)
     logger.debug(f"Cleaned output length: {len(cleaned_output)}")
 
     try:
         data = json.loads(cleaned_output)
         
-        # Handle nested JSON structure if model returns it
+        #Handle nested JSON structure if model returns it
         if "text" in data and isinstance(data["text"], dict):
             #           extract text from nested structure
             nested = data["text"]
@@ -52,11 +52,11 @@ def explain_text(req: ExplainRequest) -> ExplainResponse:
                         text_parts.append(f"• {point}: {explanation}")
                 data["text"] = "\n\n".join(text_parts)
             else:
-                # Fallback: convert nested dict to string
+                # just fallback: convert nested dict to string
                 data["text"] = json.dumps(nested, ensure_ascii=False, indent=2)
         
     except json.JSONDecodeError as e:
-        # fallback if the model returns plain text instead of valid JSON
+        # just fallback if the model returns plain text instead of valid JSON
         logger.warning(f"Failed to parse JSON response: {str(e)}")
         # generate a simple title from the text
         title_prompt = f"Create a concise 2-5 word title for this text: {raw_output[:200]}, Answer in the same language you received the text"

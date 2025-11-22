@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-# Keep the API key in an environment variable so it never ends up in git
+# Keep the API key in .env for better protection
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv('GENAI_API_KEY')

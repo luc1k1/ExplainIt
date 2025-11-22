@@ -1,7 +1,7 @@
 import requests
 import json
 
-text_to_explain = "Hello"
+text_to_explain = "A+B and A**2 - B**2"
 
 url = "http://127.0.0.1:8000/explain"
 
